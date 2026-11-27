@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">قاعدة البيانات الآمنة</string>
+    <string name="device_admin_desc">تأمين الجهاز بوضع الكشك ومنع نقل البيانات أو الوصول للإعدادات</string>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#450A0A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="تم إيقاف التطبيق نهائياً"
+            android:textColor="#FECACA"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPermanentLockReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#7F1D1D"
+            android:padding="14dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="يُحظر فتح هذا الجهاز عن بُعد. يجب نقل الجهاز فيزيائياً وتسليمه إلى المدير شخصياً لفحصه وإعادة تنشيطه على حاسوب الإدارة."
+            android:textColor="#FCA5A5"
+            android:textSize="13sp" />
+
+        <!-- قسم خاص بالمدير فقط عند استلام الجهاز فيزيائياً -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="بوابة الفحص والفتح الحضوري (للمدير فقط)"
+                android:textColor="#0F172A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivUnlockChallengeQr"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:contentDescription="QR تحدي الفتح الحضوري" />
+
+            <TextView
+                android:id="@+id/tvUnlockChallengeCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#F1F5F9"
+                android:padding="8dp"
+                android:textColor="#334155"
+                android:textIsSelectable="true"
+                android:textSize="11sp"
+                android:typeface="monospace" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCopyUnlockChallenge"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="نسخ كود التحدي لأداة المدير" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanUnlockQr"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="مسح أمر الفتح من شاشة حاسوب المدير (QR)" />
+
+            <EditText
+                android:id="@+id/etUnlockToken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#F8FAFC"
+                android:hint="أمر الفتح الموقّع من حاسوب المدير (UNLK2....)"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:minLines="2"
+                android:padding="10dp"
+                android:textColor="#0F172A"
+                android:textColorHint="#64748B"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/etUnlockAdminPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#F8FAFC"
+                android:hint="كلمة مرور المدير (يدخلها المدير بيده على الجهاز)"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="#0F172A"
+                android:textColorHint="#64748B" />
+
+            <ProgressBar
+                android:id="@+id/progressUnlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvUnlockFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#B91C1C"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExecuteAdminUnlock"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#15803D"
+                android:text="تنفيذ الفتح الإداري الحضوري" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
